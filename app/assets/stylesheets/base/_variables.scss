@@ -1,0 +1,52 @@
+// Typography
+$base-font-family: $font-stack-system;
+$heading-font-family: $base-font-family;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: 1.5em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$blue: #2F88B4;
+$orange: #FF9614;
+
+$dark-gray: #26272c;
+$medium-gray: #313239;
+$light-gray: #9fa3b8;
+$black: #000;
+$white: #FFF;
+
+// Font Colors
+$base-font-color: $white;
+$contrast-font-color: $dark-gray;
+$action-color: $orange;
+$base-color: $blue;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Focus
+$focus-outline-color: transparentize($action-color, 0.4);
+$focus-outline-width: 3px;
+$focus-outline: $focus-outline-width solid $focus-outline-color;
+$focus-outline-offset: 2px;
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;
+
+// Custom Variables
+// $text-highlight: #4682B4;
+// $bg-gray: #26272c;
+
