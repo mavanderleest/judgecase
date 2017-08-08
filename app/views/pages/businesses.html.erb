@@ -1,0 +1,20 @@
+<% provide(:title, 'Local Businesses') %>
+<%= render 'shared/mini-hero' %>
+<div class="partners">
+  <div class="partners-content">
+    <h2>Trusted Businesses in Alpharetta</h2>
+    <hr />
+    <p id="partners-desc">We support and recommend these businesses in the Alpharetta area. We have a direct, ongoing relationship with all of these folks, and they are awesome. Let them know you heard about them from Case Law!</p>
+    <hr />
+    <div class="grid-items-lines">
+      <% @partners.each do |partner| %>
+      <a href="<%= partner.website %>" class="grid-item" target="_blank">
+        <h1><%= partner.business %></h1>
+        <p><%= partner.name %></p>
+      </a>
+      <% end %>
+      <div class="right-cover"></div>
+      <div class="bottom-cover"></div>
+    </div>
+  </div>
+</div>

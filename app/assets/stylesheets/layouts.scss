@@ -4,8 +4,57 @@ div.outer {
   @include outer-container;
 }
 
+@-webkit-keyframes slideInDown{from{-webkit-transform:translate3d(0, -100%, 0);transform:translate3d(0, -100%, 0);visibility:visible;}
+to{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);}
+}
+@keyframes slideInDown{from{-webkit-transform:translate3d(0, -100%, 0);transform:translate3d(0, -100%, 0);visibility:visible;}
+to{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);}
+}
+.slideInDown{-webkit-animation-name:slideInDown;animation-name:slideInDown;}
+@-webkit-keyframes slideInLeft{from{-webkit-transform:translate3d(-100%, 0, 0);transform:translate3d(-100%, 0, 0);visibility:visible;}
+to{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);}
+}
+@-webkit-keyframes slideOutUp{from{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);}
+to{visibility:hidden;-webkit-transform:translate3d(0, -100%, 0);transform:translate3d(0, -100%, 0);}
+}
+@keyframes slideOutUp{from{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);}
+to{visibility:hidden;-webkit-transform:translate3d(0, -100%, 0);transform:translate3d(0, -100%, 0);}
+}
+.slideOutUp{-webkit-animation-name:slideOutUp;animation-name:slideOutUp;}
+@-webkit-keyframes slideInUp{from{-webkit-transform:translate3d(0, 100%, 0);transform:translate3d(0, 100%, 0);visibility:visible;}
+to{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);}
+}
+@keyframes slideInUp{from{-webkit-transform:translate3d(0, 100%, 0);transform:translate3d(0, 100%, 0);visibility:visible;}
+to{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);}
+}
+.slideInUp{-webkit-animation-name:slideInUp;animation-name:slideInUp;}
+@-webkit-keyframes slideOutDown{from{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);}
+to{visibility:hidden;-webkit-transform:translate3d(0, 100%, 0);transform:translate3d(0, 100%, 0);}
+}
+@keyframes slideOutDown{from{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);}
+to{visibility:hidden;-webkit-transform:translate3d(0, 100%, 0);transform:translate3d(0, 100%, 0);}
+}
+.slideOutDown{-webkit-animation-name:slideOutDown;animation-name:slideOutDown;}
+.custom-animated{-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-fill-mode:both;animation-fill-mode:both;}
+
+.call-fixed-bottom {
+  position:fixed;
+  bottom:2em;
+  right:0;
+  left:0;
+  z-index:1030;
+
+  @include media ($medium-screen) {
+    right: 2em;
+    left:auto;
+  }
+}
 
 // Navbar
+
+.navbar-fixed-top {
+  position:fixed;right:0;left:0;z-index:1030;
+}
 
 header.navigation {
   $base-border-color: gainsboro !default;
@@ -29,7 +78,7 @@ header.navigation {
   $horizontal-bar-mode: $large-screen;
 
   background-color: $navigation-background;
-  border-bottom: 1px solid darken($navigation-background, 10);
+  // border-bottom: 1px solid darken($navigation-background, 10);
   min-height: $navigation-height;
   width: 100%;
   z-index: 999;
@@ -297,70 +346,164 @@ header.navigation {
     }
   }
 
+// Call Us / Phone Number
 
-// Search bar
+  .large-show {
+    display: none;
+  }
 
-  .search-bar {
-    $search-bar-border-color: $base-border-color;
-    $search-bar-border: 1px solid $search-bar-border-color;
-    $search-bar-background: lighten($search-bar-border-color, 10%);
-
-    float: left;
-    padding: 0.85em 0.85em 0.7em 0.6em;
-    width: 60%;
-
-    form {
-      position: relative;
-
-      input[type=search] {
-        background: $navigation-search-background;
-        border: $navigation-search-border;
-        border-radius: $base-border-radius * 2;
-        box-sizing: border-box;
-        color: $navigation-color;
-        font-size: 0.9em;
-        font-style: italic;
-        margin: 0;
-        padding: 0.5em 0.8em;
-        width: 100%;
-
-        @include media($horizontal-bar-mode) {
-          width: 100%;
-        }
-      }
-
-      button[type=submit] {
-        background: $navigation-search-background;
-        border: 0;
-        bottom: 0.3em;
-        left: auto;
-        outline: none;
-        padding: 0 9px;
-        position: absolute;
-        right: 0.3em;
-        top: 0.3em;
-
-        img {
-          height: 12px;
-          opacity: 0.7;
-          padding: 1px;
-        }
-      }
-    }
-
-    @include media($horizontal-bar-mode) {
-      display: inline-block;
-      position: relative;
-      width: 16em;
-
-      input {
-        box-sizing: border-box;
-        display: block;
+  .medium-show {
+    @include media($large-screen) {
+      display:none;
+      .large-show {
+        display: inline;
       }
     }
   }
+
+// Search bar
+
+  // .search-bar {
+  //   $search-bar-border-color: $base-border-color;
+  //   $search-bar-border: 1px solid $search-bar-border-color;
+  //   $search-bar-background: lighten($search-bar-border-color, 10%);
+
+  //   float: left;
+  //   padding: 0.85em 0.85em 0.7em 0.6em;
+  //   width: 60%;
+
+  //   form {
+  //     position: relative;
+
+  //     input[type=search] {
+  //       background: $navigation-search-background;
+  //       border: $navigation-search-border;
+  //       border-radius: $base-border-radius * 2;
+  //       box-sizing: border-box;
+  //       color: $navigation-color;
+  //       font-size: 0.9em;
+  //       font-style: italic;
+  //       margin: 0;
+  //       padding: 0.5em 0.8em;
+  //       width: 100%;
+
+  //       @include media($horizontal-bar-mode) {
+  //         width: 100%;
+  //       }
+  //     }
+
+  //     button[type=submit] {
+  //       background: $navigation-search-background;
+  //       border: 0;
+  //       bottom: 0.3em;
+  //       left: auto;
+  //       outline: none;
+  //       padding: 0 9px;
+  //       position: absolute;
+  //       right: 0.3em;
+  //       top: 0.3em;
+
+  //       img {
+  //         height: 12px;
+  //         opacity: 0.7;
+  //         padding: 1px;
+  //       }
+  //     }
+  //   }
+
+  //   @include media($horizontal-bar-mode) {
+  //     display: inline-block;
+  //     position: relative;
+  //     width: 16em;
+
+  //     input {
+  //       box-sizing: border-box;
+  //       display: block;
+  //     }
+  //   }
+  // }
 }
 
+
+// Hero
+.hero {
+  $large-screen: 50em !default;
+  align-items: center;
+  background: image-url("mobile-courthouse.jpg");
+  background-position: right;
+  background-size: none;
+  display: flex;
+  justify-content: center;
+  min-height: 25em;
+  padding: 2em;
+
+  @include media($large-screen) {
+    background: image-url("bg-courthouse.jpg");
+    background-position: left;
+    background-size: cover;
+    // justify-content: flex-end;
+  }
+
+  .hero-content {
+    max-width: 30em;
+    text-align: center;
+
+    h1 {
+      margin-bottom: 0.25em;
+    }
+
+    h3 {
+      font-size: 1em;
+      font-weight: normal;
+      margin-bottom: 1.5em;
+
+    }
+  }
+
+  li {
+    font-weight: normal;
+  }
+}
+
+// Mini Hero
+.mini-hero {
+  $large-screen: 50em !default;
+  align-items: center;
+  background: image-url("mobile-courthouse.jpg");
+  background-position: right;
+  background-size: none;
+  display: flex;
+  justify-content: center;
+  min-height: 8em;
+  padding: 2em;
+
+  @include media($large-screen) {
+    background: image-url("bg-courthouse.jpg");
+    background-position: left;
+    background-size: cover;
+    // justify-content: flex-end;
+  }
+
+  .mini-hero-content {
+    max-width: 30em;
+    text-align: center;
+
+    h1 {
+      margin-bottom: 0.25em;
+    }
+
+    h3 {
+      font-size: 1em;
+      font-weight: normal;
+      margin-bottom: 1.5em;
+
+    }
+  }
+
+  li {
+    font-weight: normal;
+  }
+}
 
 // Footer
 
@@ -438,6 +581,10 @@ header.navigation {
     margin: auto;
     max-width: 35em;
     text-align: center;
+
+    a {
+      color: $white;
+    }
   }
 }
 
@@ -447,4 +594,5 @@ header.navigation {
 hr {
   @include shift(3);
   @include span-columns(6);
+  @include clearfix;
 }

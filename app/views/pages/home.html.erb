@@ -1,16 +1,4 @@
-<div class="hero" data-section="home">
-  <div class="hero-content">
-    <h1><span itemscope itemtype="http://schema.org/LegalService">Case Law, PLLC</span></h1>
-    <h2>Supporting our community through</h2>
-      <ul>
-        <li>free resources</li>
-        <li>superb legal counsel</li>
-        <li>excellent client experience</li>
-      </ul>
-    <br>
-    <button id="header-action"><a href="tel:+18668227352">Need to call us?</a></button>
-  </div>
-</div>
+<%= render 'shared/hero' %>
 <div class="mission">
   <div class="mission-content">
     <h2>Our Mission</h2>
@@ -21,7 +9,7 @@
 <div class="cases" data-section="cases">
   <div class="cases-content">
     <h2>Cases We Handle</h2>
-    <hr />
+    <hr /><br><br>
     <div id="cases-pi">
       <div class="side-image">
         <div class="images-wrapper"></div>
@@ -86,7 +74,7 @@
       <p>You may not always have the luxury of extra time to research and understand your legal matter. If you need help now, get in touch with us. Otherwise, explore our free resources below. </p>
     </div>
     <br />
-    <button><a href="tel:+18668227352">Give us a call</a></button>
+    <a href="tel:+18668227352"><button>Give us a call</button></a>
   </div>
 </div>
 <div class="resources" data-section="resources">
@@ -158,7 +146,7 @@
 <div class="about" data-section="about">
   <div class="about-content">
     <h2>About Kelly Case</h2>
-    <hr />
+    <hr /><br><br>
     <div class="side-image">
       <div class="images-wrapper"></div>
       <div class="side-image-content">
@@ -186,28 +174,46 @@
 <div class="contact" data-section="contact">
   <div class="contact-content">
     <h2>Contact Us</h2>
-    <hr />
-    <div class="side-image">
-      <div class="images-wrapper"></div>
-      <div class="side-image-content">
-        <!-- <h4>His Purpose</h4> -->
-        <p>After suffering a loss at the age of 13 when an insurance company took advantage of his poor, uneducated father, Kelly made it his life's mission to help anyone having difficulty with a greedy insurance company. That's why he became a lawyer.</p>
-        <!-- <h4>Early Practice</h4> -->
-        <p>After graduating from Tulane University School of Law, Kelly practiced for many years as a trial attorney, prosecutor, and then DUI attorney in Houston, TX. DUI cases are often considered one of the most technically difficult cases to handle, due to the depth and breadth of knowledge required to win. However, Kelly is a recognized blood expert with a deep understanding of the science behind blood testing, which gave him a leg up in DUI cases and an excellent success rate.</p>
-        <!-- <h4>Current Focus</h4> -->
-        <p>When Kelly returned to private practice after four years on the bench as a judge, he redirected his practice toward educating his local community and expanded the types of cases he handled. With a dedicated team and extensive network of fellow lawyers across the country, Kelly is able to focus on the clients that he is best able to serve.</p>
-        <!-- <h4>Outside of the law</h4> -->
-        <p>Outside of practicing law, Kelly spends his time with his family and enjoys fly fishing, carpentry, and cooking. He builds custom bamboo fly fishing rods by hand.</p>
-        <!-- <h4>Brief Summary</h4> -->
-        <br />
-        <ul>
-          <li><i class="fa fa-gavel fa-fw"></i>&#09;Former Judge of 9th Judicial District Court in Montgomery Country, TX</li>
-          <li><i class="fa fa-black-tie fa-fw"></i>&#09;Over 1,000 jury trials in the last two decades</li>
-          <li><i class="fa fa-institution fa-fw"></i>&#09;Governor-appointed to train other judges</li>
-          <li><i class="fa fa-users fa-fw"></i>&#09;Father of four children</li>
-          <li><i class="fa fa-hand-rock-o fa-fw"></i>&#09;Aikido Black Belt</li>
-        </ul>
-      </div>
+    <hr /><br><br>
+    <div id="contact-about" class="contact-section">
+      <h3>We are here for you</h3>
+      <hr />
+      <p>Case Law is dedicated to providing an excellent client experience for the folks we work with. Whether that is providing free resources, coordinating with other firms to provide the best fit, or guiding clients through our own processes, we hope we can take a load off of your shoulders and help make tomorrow better.
+        <br>
+        <a href="<%= businesses_path %>"><button><i class="fa fa-handshake-o"></i> Trusted Alpharetta Businesses</button></a>
+      </p>
+    </div>
+    <div id="contact-address" class="contact-section">
+      <h3>Our Address &amp; Info</h3>
+      <hr />
+      <ul class="contact-info">
+        <li><a href="http://maps.google.com/?q=Case Law, PLLC, 13010 Morris Road, 6th Floor, BLDG I, Alpharetta, GA 30004" target="_blank"><button><span itemscope itemtype="http://schema.org/PostalAddress"><i class="fa fa-map-marker fa-fw"></i> 13010 Morris Road, 6th Floor, BLDG I, Alpharetta, GA 30004</span></button></a></li>
+        <li><a href="tel:+18668227352"><button><i class="fa fa-phone fa-fw"></i> 866-822-7352</button></a></li>
+        <li><a href="mailto:info@judgecase.com"><button><i class="fa fa-envelope fa-fw"></i> info@judgecase.com</button></a></li>
+        <li><a href="http://judgecase.com" target="_blank"><button><i class="fa fa-globe fa-fw"></i> www.JudgeCase.com</button></a></li>
+        <li><a href="http://beatmyatlantadui.com" target="_blank"><button><i class="fa fa-book fa-fw"></i> DUI eBook</button></a></li>
+        <li><a href="http://GeorgiaPersonalInjuryGuidebook.net" target="_blank"><button><i class="fa fa-book fa-fw"></i> Personal Injury eBook</button></a></li>
+      </ul>
+      <p id="social-connect">Connect with us</p>
+      <ul class="social-media">
+        <li><a href="https://facebook.com/CaseLawPLLC" target="_blank" class="facebook"><i class="fa fa-facebook fa-2x"></i></a></li>
+        <li><a href="https://twitter.com/CaseLawPLLC" target="_blank" class="twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
+        <li><a href="https://medium.judgecase.com" target="_blank" class="medium"><i class="fa fa-medium fa-2x"></i></a></li>
+        <li><a href="https://instagram.com/CaseLawPLLC" target="_blank" class="instagram"><i class="fa fa-instagram fa-2x"></i></a></li>
+      </ul>
+    </div>
+    <div id="contact-form" class="contact-section">
+      <h3>Tell us your story</h3>
+      <hr />
+      <form accept-charset="UTF-8" action="" method="POST" class="">
+        <label for="name" class="">Name</label>
+        <input type="text" class="" id="name" placeholder="Name" name="Name">
+        <label for="email" class="">Email</label>
+        <input type="email" class="" id="email" placeholder="Email" name="Email">
+        <label for="message" class="">Message</label>
+        <textarea class="" id="message" rows="7" placeholder="Message" name="Message"></textarea>
+        <input type="submit" id="btn-submit" class="" value="Send Message">
+      </form>
     </div>
   </div>
 </div>

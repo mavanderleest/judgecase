@@ -24,12 +24,23 @@ h6 {
   font-size: 0.5em;
 }
 
-a {
+a,
+a:active,
+a:focus, {
   text-decoration: none;
+  outline:0;
+  border:none;
+  -moz-outline-style: none;
 }
 
-button a {
+a button,
+a button:hover,
+a button:active,
+a button:focus {
   color: $white;
+  outline:0;
+  border:none;
+  -moz-outline-style: none;
 }
 
 .img-cover {
@@ -125,3 +136,4 @@ button a {
     }
   }
 }
+

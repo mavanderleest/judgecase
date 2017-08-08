@@ -1,37 +1,5 @@
 //Home
 
-.hero {
-  $large-screen: 50em !default;
-  align-items: center;
-  background: image-url("mobile-courthouse.jpg");
-  background-position: right;
-  background-size: none;
-  display: flex;
-  justify-content: center;
-  min-height: 25em;
-  padding: 2em;
-
-  @include media($large-screen) {
-    background: image-url("bg-courthouse.jpg");
-    background-position: left;
-    background-size: cover;
-    // justify-content: flex-end;
-  }
-
-  .hero-content {
-    max-width: 30em;
-    text-align: center;
-  }
-
-  .hero-logo {
-    margin: auto;
-  }
-
-  li {
-    font-weight: normal;
-  }
-}
-
 .mission {
   $large-screen: 50em !default;
   align-items: center;
@@ -40,7 +8,7 @@
   background-size: none;
   display: flex;
   justify-content: center;
-  min-height: 25em;
+  min-height: 35em;
   padding: 2em;
 
   .mission-content {
@@ -70,7 +38,10 @@
   padding: 2em;
   color: $dark-gray;
 
-  hr { border-bottom: 1px solid $medium-gray; }
+  hr {
+    border-bottom: 1px solid $medium-gray;
+    display: block;
+  }
 
   .cases-content {
     @include outer-container;
@@ -103,7 +74,7 @@
         border-bottom: $side-image-border;
         display: block;
         min-height: 12em;
-        padding: 3em;
+        // padding: 3em;
 
         @include media($large-screen) {
           @include span-columns(4);
@@ -331,3 +302,241 @@
     }
   }
 }
+
+
+.contact {
+  $large-screen: 50em !default;
+  align-items: center;
+  background: $light-gray;
+  background-position: right;
+  background-size: none;
+  justify-content: center;
+  min-height: 25em;
+  padding: 2em;
+
+  hr { border-bottom: 1px solid $medium-gray; }
+
+  .contact-content {
+    @include outer-container;
+    text-align: center;
+    padding-top: 2em;
+
+    .contact-section {
+      text-align: justify;
+
+      p, ul, hr {
+        @include span-columns(12);
+        @include media ($large-screen) {
+          @include span-columns(10);
+        }
+      }
+
+      h3 {
+        margin: 1em 0 1em 0;
+        @include span-columns(12);
+      }
+        hr {
+        @include shift(0);
+        margin-top: 0;
+        @include clearfix;
+      }
+      @include media($large-screen) {
+        @include span-columns(4);
+      }
+
+      #social-connect {
+        margin-top: 1em;
+      }
+
+      form {
+        label, input {
+          @include span-columns(12);
+        }
+        @include media($large-screen) {
+          @include span-columns(10);
+        }
+        #btn-submit {
+          color: $white;
+        }
+      }
+    }
+
+    .contact-info button,
+    #contact-about button {
+      @include span-columns(12);
+      white-space: normal;
+      height: 100%;
+      margin-top: 0.5em;
+      background-color: $base-color;
+
+      &:hover {
+        background-color: darken($base-color, 10%);
+      }
+    }
+
+    .social-media {
+      li {
+        display: inline-block;
+        margin-right: 1em;
+        a {
+          color: $base-color;
+          &:hover {
+            color: darken($base-color, 10%);
+          }
+        }
+      }
+    }
+
+    #social-connect,
+    .social-media {
+      text-align: center;
+      @include media ($large-screen) {
+        text-align: left;
+      }
+    }
+  }
+}
+
+
+// Local Businesses Page
+.partners {
+  $large-screen: 50em !default;
+  align-items: center;
+  background: $medium-gray;
+  background-position: right;
+  background-size: none;
+  display: flex;
+  justify-content: center;
+  min-height: 35em;
+  padding: 2em;
+
+  .partners-content {
+    @include outer-container;
+    text-align: center;
+
+    p#partners-desc {
+      @include shift(2);
+      @include span-columns(8);
+    }
+
+    @mixin grid-item-columns($columns) {
+      width: (100% / 12) * $columns;
+    }
+
+    .grid-items-lines {
+      $base-background-color: $medium-gray;
+      $dark-gray: #333 !default;
+      $light-gray: #DDD !default;
+      $medium-screen: 40em !default;
+      $large-screen: 53.75em !default;
+      $base-font-color: $dark-gray;
+      $grid-items-background: $base-background-color;
+      $grid-item-background: $white;
+      $grid-item-border: 1px solid transparentize($base-font-color, 0.8);
+      $grid-medium-item-columns: 6;
+      $grid-medium-item-big-columns: 12;
+      $grid-large-item-columns: 4;
+      $grid-large-item-big-columns: 8;
+      $grid-item-color: $base-font-color;
+      $grid-item-height: 10em;
+
+      @include clearfix;
+      position: relative;
+      text-align: center;
+
+      .grid-item {
+        background: $grid-item-background;
+        border-bottom: $grid-item-border;
+        border-right: $grid-item-border;
+        cursor: pointer;
+        float: left;
+        height: $grid-item-height;
+        outline: none;
+        overflow: hidden;
+        padding: 2em;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        width: 100%;
+
+        @include media($medium-screen) {
+          @include grid-item-columns($grid-medium-item-columns);
+        }
+
+        @include media($large-screen) {
+          @include grid-item-columns($grid-large-item-columns);
+        }
+
+        &:focus,
+        &:hover {
+          background: $light-gray;
+        }
+      }
+
+      .grid-item img {
+          display: block;
+          height: 2.5em;
+          margin-bottom: 1.2em;
+          opacity: 0.2;
+        }
+
+      .grid-item h1 {
+          color: $grid-item-color;
+          font-size: 1.3em;
+          margin-bottom: 0.4em;
+        }
+
+      .grid-item p {
+          color: transparentize($grid-item-color, 0.4);
+          line-height: 1.5em;
+
+          // @include media($medium-screen) {
+          //   max-width: 70%;
+          // }
+        }
+
+      .grid-item-big {
+        @include media($medium-screen) {
+          @include grid-item-columns($grid-medium-item-big-columns);
+        }
+        @include media($large-screen) {
+          @include grid-item-columns($grid-large-item-big-columns);
+        }
+        // p {
+        //   @include media($medium-screen) {
+        //     max-width: 60%;
+        //   }
+        // }
+      }
+
+
+    // this, below, might not be the most beautiful solution but it removes the outer borders by using the background color.
+      .bottom-cover {
+        background: $grid-items-background;
+        bottom: 0;
+        height: 3px;
+        position: absolute;
+        width: 100%;
+      }
+
+      .right-cover {
+        background: $grid-items-background;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        width: 4px;
+      }
+    }
+    .partner-listing {
+      @include media($medium-screen) {
+        @include span-columns(6 of 12);
+        @include omega (2n);
+      }
+      @include media($large-screen) {
+        @include omega-reset(2n);
+        @include span-columns(4 of 12);
+        @include omega (3n);
+      }
+    }
+  }
+}
+
