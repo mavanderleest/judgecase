@@ -16,8 +16,10 @@
     text-align: center;
 
     p {
-      @include shift(2);
-      @include span-columns(8);
+      @include media ($medium-screen) {
+        @include shift(2);
+        @include span-columns(8);
+      }
     }
 
     span {
@@ -349,7 +351,7 @@
       }
 
       form {
-        label, input {
+        label, input, button {
           @include span-columns(12);
         }
         @include media($large-screen) {
