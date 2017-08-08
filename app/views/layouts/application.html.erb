@@ -2,7 +2,12 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
+    <meta name="description" content="Case Law is a personal injury, family, DUI, and criminal law firm based in Alpharetta, GA. We provide a number of free resources to our community so they can make better informed legal decisions." />
+    <meta name="author" content="Morgan VanDerLeest | morgan@judgecase.com" />
     <%= csrf_meta_tags %>
+
+    <!-- Favicon info -->
+    <%= favicon_link_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
