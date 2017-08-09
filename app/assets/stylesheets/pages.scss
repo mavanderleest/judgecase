@@ -418,8 +418,12 @@
     text-align: center;
 
     p#partners-desc {
-      @include shift(2);
-      @include span-columns(8);
+      @include span-columns(12);
+
+      @include media($medium-screen) {
+        @include shift(2);
+        @include span-columns(8);
+      }
     }
 
     @mixin grid-item-columns($columns) {
