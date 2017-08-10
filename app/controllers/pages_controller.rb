@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   end
 
   def businesses
-    @partners = Partner.all
+    @businesses = Business.all
   end
 end

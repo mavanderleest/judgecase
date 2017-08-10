@@ -402,7 +402,7 @@
 
 
 // Local Businesses Page
-.partners {
+.businesses {
   $large-screen: 50em !default;
   align-items: center;
   background: $medium-gray;
@@ -413,11 +413,11 @@
   min-height: 35em;
   padding: 2em;
 
-  .partners-content {
+  .businesses-content {
     @include outer-container;
     text-align: center;
 
-    p#partners-desc {
+    p#businesses-desc {
       @include span-columns(12);
 
       @include media($medium-screen) {
@@ -533,7 +533,7 @@
         width: 4px;
       }
     }
-    .partner-listing {
+    .business-listing {
       @include media($medium-screen) {
         @include span-columns(6 of 12);
         @include omega (2n);
