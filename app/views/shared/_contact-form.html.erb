@@ -1,0 +1,14 @@
+<%= form_for @message, url: create_message_url, :html=>{:remote=>true,:id=>"contact-us-form"} do |f| %>
+    <p id="contact-form-notice" class="form-notices">
+      <%= notice %>
+      <%= @message.errors.full_messages.join("<br>").html_safe %>
+    </p>
+
+    <%= f.label :name, "Name" %>
+    <%= f.text_field(:name, { placeholder: 'Jo', id: 'name' })%>
+    <%= f.label :email, "Email" %>
+    <%= f.email_field(:email, { placeholder: 'jo@example.com', id: 'email' })%>
+    <%= f.label :body, "Message" %>
+    <%= f.text_area(:body, { placeholder: 'Tell us your story...', id: 'body', size: '8x7' })%>
+    <%= f.button 'Send your message', id: 'btn-submit' %>
+<% end %>

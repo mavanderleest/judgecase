@@ -1,17 +1,23 @@
 class MessagesController < ApplicationController
 
-  def new
-    @message = Message.new
-  end
+  # def new
+  #   @message = Message.new
+  # end
 
   def create
     @message = Message.new message_params
 
     if @message.valid?
       MessageMailer.contact_us(@message).deliver_now
-      redirect_to new_message_url, notice: "We have received your message and will be in contact with you soon!"
+      respond_to do |format|
+        format.html { redirect_to root_url, notice: "We have received your message and will be in contact with you soon!" }
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render 'pages/home' }
+        format.js
+      end
     end
   end
 

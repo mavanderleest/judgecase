@@ -206,15 +206,7 @@
     <div id="contact-form" class="contact-section">
       <h3>Tell us your story</h3>
       <hr />
-      <form accept-charset="UTF-8" action="" method="POST" class="">
-        <label for="name" class="">Name</label>
-        <input type="text" class="" id="name" placeholder="Name" name="Name">
-        <label for="email" class="">Email</label>
-        <input type="email" class="" id="email" placeholder="Email" name="Email">
-        <label for="message" class="">Message</label>
-        <textarea class="" id="message" rows="7" placeholder="Message" name="Message"></textarea>
-        <button type="submit" id="btn-submit" class="">Send your Message</button>
-      </form>
+      <%= render 'shared/contact-form' %>
     </div>
   </div>
 </div>
