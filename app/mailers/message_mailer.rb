@@ -5,8 +5,8 @@ class MessageMailer < ApplicationMailer
     @email = message.email
     @body = message.body
 
-    mail to: 'mavanderleest@gmail.com,morgan@atomicdigital.io',
-                 cc: 'mvanderleest@semanticsgroup.com',
+    mail to: 'amanda@judgecase.com',
+                 cc: 'kcase@judgecase.com',
                  bcc: 'morgan@judgecase.com',
                  from: 'morgan@judgecase.com'
   end
