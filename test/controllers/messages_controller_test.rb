@@ -30,7 +30,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
 
     follow_redirect!
 
-    assert_match /We have received your message and will be in contact with you soon!/, response.body
+    assert_match /Thank you for your message and will be in contact with you soon!/, response.body
   end
 
   test 'invalid POST create' do

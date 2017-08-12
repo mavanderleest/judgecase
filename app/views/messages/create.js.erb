@@ -3,7 +3,7 @@
   $('input#email')[0].value     = '';
   $('textarea#body')[0].value   = '';
   $('#contact-form-notice').show();
-  $('#contact-form-notice')[0].textContent = "We have received your message and will be in contact with you soon!";
+  $('#contact-form-notice')[0].textContent = "Thank you for your message and will be in contact with you soon!";
 <% else %>
   $('#contact-form-notice').show();
   $('#contact-form-notice')[0].textContent = "<%= j @message.errors.full_messages.join('. ') %>";

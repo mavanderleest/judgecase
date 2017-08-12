@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
     if @message.valid?
       MessageMailer.contact_us(@message).deliver_now
       respond_to do |format|
-        format.html { redirect_to root_url, notice: "We have received your message and will be in contact with you soon!" }
+        format.html { redirect_to root_url, notice: 'Thank you for your message and will be in contact with you soon!' }
         format.js
       end
     else
