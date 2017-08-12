@@ -3,7 +3,7 @@ class Message
   attr_accessor :name, :email, :body
   validates :name, :email, :body,
             length: { minimum:1,
-                      message: "cannot be blank"
+                      message: "is missing"
             }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   validates :email, format: { with: VALID_EMAIL_REGEX, message: "must be valid" }

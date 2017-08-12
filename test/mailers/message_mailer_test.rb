@@ -15,7 +15,7 @@ class MessageMailerTest < ActionMailer::TestCase
 
     assert_equal 'JudgeCase.com contact form submission', email.subject
     assert_equal ['morgan@judgecase.com'],                  email.to
-    assert_equal ['morgan@judgecase.com'],                email.from
+    assert_equal ['info@judgecase.com'],                email.from
     assert_match /hello, how are you?/,               email.body.encoded
   end
 

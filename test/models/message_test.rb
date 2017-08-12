@@ -26,9 +26,9 @@ class MessageTest < ActiveSupport::TestCase
 
     refute msg.valid?, 'Blank Message should be invalid'
 
-    assert_match /blank/, msg.errors[:name].to_s
-    assert_match /blank/, msg.errors[:email].to_s
-    assert_match /blank/, msg.errors[:body].to_s
+    assert_match /missing/, msg.errors[:name].to_s
+    assert_match /missing/, msg.errors[:email].to_s
+    assert_match /missing/, msg.errors[:body].to_s
   end
 
 end

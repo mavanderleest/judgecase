@@ -36,7 +36,8 @@ a:focus, {
 a button,
 a button:hover,
 a button:active,
-a button:focus {
+a button:focus,
+button#btn-submit {
   color: $white;
   outline:0;
   border:none;

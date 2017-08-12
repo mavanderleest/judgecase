@@ -38,9 +38,9 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
         message: { name: '', email: '', body: '' }
     }
 
-    assert_match /Name .* blank/, response.body
-    assert_match /Email .* blank/, response.body
-    assert_match /Body .* blank/, response.body
+    assert_match /Name .* missing/, response.body
+    assert_match /Email .* missing/, response.body
+    assert_match /Body .* missing/, response.body
   end
 
 end
