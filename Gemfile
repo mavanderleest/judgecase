@@ -25,6 +25,9 @@ gem 'neat', '~> 1.9.0'
 gem 'refills'
 gem 'font-awesome-sass'
 
+# blog
+gem 'devise', '~> 4.2'
+gem 'activeadmin', github: 'activeadmin'
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -6,3 +6,5 @@ if Business.count == 0
     Business.create(row.to_hash)
   end
 end
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
