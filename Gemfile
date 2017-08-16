@@ -28,6 +28,7 @@ gem 'font-awesome-sass'
 # blog
 gem 'devise', '~> 4.2'
 gem 'activeadmin', github: 'activeadmin'
+gem 'active_skin'
 
 group :development, :test do
   gem 'byebug', platform: :mri
