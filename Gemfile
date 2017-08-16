@@ -18,7 +18,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
-# Styling
+# styling
 gem 'bitters'
 gem 'bourbon'
 gem 'neat', '~> 1.9.0'
