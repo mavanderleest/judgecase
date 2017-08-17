@@ -1,6 +1,19 @@
 ActiveAdmin.register Post do
   permit_params :title, :body, :slug, :author_name, :image
 
+  index do
+    column :title
+    column :body do |post|
+      post.body.truncate(25) + " (" + post.body.split.size.to_s + " words)"
+    end
+    column :slug
+    column :author_name
+    column :image do |post|
+      "Uploaded" unless !post.image.exists?
+    end
+    actions
+  end
+
   show do |t|
     attributes_table do
       row :title

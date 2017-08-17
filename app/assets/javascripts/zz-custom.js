@@ -1,5 +1,4 @@
-;
-(function() {
+;(function() {
     'use strict';
     var isiPad = function() {
         return (navigator.platform.indexOf("iPad") != -1);
@@ -7,39 +6,39 @@
     var isiPhone = function() {
         return ((navigator.platform.indexOf("iPhone") != -1) || (navigator.platform.indexOf("iPod") != -1));
     };
-    $(window).load(function(){
-      // Remove the # from the hash, as different browsers may or may not include it
-      var hash = location.hash.replace('#','');
-      if(hash != ''){
-        // Clear the hash in the URL
-        location.hash = '';   // delete front "//" if you want to change the address bar
-        location.href.replace('#',"");
-        $('html, body').animate({
-          scrollTop: $('[data-section="' + hash + '"]').offset().top - 55
-        }, 500);
-      }
+    $(window).on('load', function(){
+        // Remove the # from the hash, as different browsers may or may not include it
+        var hash = location.hash.replace('#','');
+        if(hash != ''){
+            // Clear the hash in the URL
+            location.hash = '';   // delete front "//" if you want to change the address bar
+            location.href.replace('#',"");
+            $('html, body').animate({
+                scrollTop: $('[data-section="' + hash + '"]').offset().top - 55
+            }, 500);
+        }
     });
     var clickMenu = function() {
-      $('#js-navigation-menu a:not(.external)').click(function(event) {
-        var section = $(this).data('nav-section'),
-            navbar = $('#js-navigation-menu'),
-            url = $(this).context.href;
-        if ($('[data-section="' + section + '"]').length) {
-          $('html, body').animate({
-              scrollTop: $('[data-section="' + section + '"]').offset().top - 55
-          }, 500);
-        }
-        else {
-          window.location.replace(url);
-        }
-        // if (navbar.is(':visible')) {
-        //   navbar.removeClass('in');
-        //   navbar.attr('aria-expanded', 'false');
-        //   $('.js-fh5co-nav-toggle').removeClass('active');
-        // }
-        event.preventDefault();
-        return false;
-      });
+        $('#js-navigation-menu a:not(.external)').click(function(event) {
+            var section = $(this).data('nav-section'),
+                navbar = $('#js-navigation-menu'),
+                url = $(this).href;
+            if ($('[data-section="' + section + '"]').length) {
+                $('html, body').animate({
+                    scrollTop: $('[data-section="' + section + '"]').offset().top - 55
+                }, 500);
+            }
+            else {
+                window.location.replace(url);
+            }
+            // if (navbar.is(':visible')) {
+            //   navbar.removeClass('in');
+            //   navbar.attr('aria-expanded', 'false');
+            //   $('.js-fh5co-nav-toggle').removeClass('active');
+            // }
+            event.preventDefault();
+            return false;
+        });
     };
     var navActive = function(section) {
         var $el = $('#js-navigation-menu');

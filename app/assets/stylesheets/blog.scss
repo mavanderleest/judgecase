@@ -1,0 +1,52 @@
+// Index
+
+
+// Show
+$blog-header-height: 30em;
+$blog-banner-height: $blog-header-height * 2;
+
+.blog-header {
+  max-height: $blog-header-height;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.blog-title {
+  color: $dark-gray;
+  padding: 8em 0;
+  position: relative;
+  z-index: 9;
+}
+
+.blog-banner {
+  background-position: top;
+  background-size: cover;
+  background-color: beige;
+  height: $blog-banner-height;
+  left: 0;
+  position: absolute;
+  top: - $blog-header-height / 3;
+  width: 100%;
+}
+
+.blog-title > h1 {
+  background-color: rgba(255,255,255,.5);
+}
+
+.blog-opener,
+.blog-closer {
+  font-size: .75em;
+}
+
+.blog-opener,
+.blog-content,
+.blog-closer {
+  @include outer-container;
+  color: $medium-gray;
+}
+
+.blog-closer {
+  height: 5%;
+}

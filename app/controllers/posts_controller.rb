@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @posts = Post.order('created_at DESC').limit(4).offset(1)
+    @posts = Post.order('created_at DESC').limit(4)
   end
 
   private
